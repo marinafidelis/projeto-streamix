@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container-header">
+
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <div class="nome-redesocial">
+            <h1>Streamix</h1>
+        </div>    
+
+        
+            <form class="pesquisa" role="search" aria-label="Pesquisar no feed">
+                <label for="busca" class="buscar"></label>
+                <input type="text" id="busca" name="busca" placeholder="Pesquisar" />
+            </form>
+            
+        <div class="perfil">
+                <img src="/imagens/usuario.jpeg" alt="Foto do perfil" class="foto-perfil">
+        </div>
+
+        </div>
+        
+    </header>
+
+    <aside class="menu-lateral">
+      
+        <section class="menu-principal">
+            <img src="/imagens/logotipo.png" alt="Logo Streamix" class="logo">
+            <h3 class="principal">Principal</h3>
+
+            <ul>
+                <li><button class="btn-aba" data-aba="videos">Vídeos</button></li>
+                <li><button class="btn-aba" data-aba="posts">Posts</button></li>
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="mensagem.html">Mensagens</a></li>
+                <li><a href="#">Salvos</a></li>
+                <li><a href="#">Minhas Curtidas</a></li>
+            </ul>
+        </section>
+
+        <section class="menu-configuracao">
+            <h3 class="configuracao">Configuração</h3>
+
+            <ul>
+                <li><a href="senha.html">Mudar senha</a></li>
+                <li><button id="btn-modo">🌙</button></li>
+            </ul>
+        </section>
+                
+            <section class="criar">Postar</section>
+            
+        </aside>
+        
+        <main class="feed">
+            
+            <!--Aba de videos-->
+            <section id="feed-videos" class="aba ativa">
+                <h2>Videos</h2>
+
+            <!--Exemplo de video do youtube-->
+            <article class="video-card"> 
+                <iframe src="" frameborder="0"></iframe>
+            </article>
+        </section>
+        
+        <!--Aba de posts-->
+        <section id="feed-posts" class="aba">
+            <h2>Posts</h2>
+
+            <!--Formulario para criar posts-->
+            <div class="formulario-post">
+                
+                <form action="#" method="post">
+                    <img src="/imagens/usuario1.jpeg" alt="foto de usuario" class="imagem-usuario">
+                    <textarea name="texto" placeholder="O que está acontecendo?" required></textarea>
+                    <button type="submit">Postar</button>
+                </form>
+                
+            </div>
+            
+            <!--Post já publicado-->
+            <article class="post">
+                <header class="post-header">
+                    <img src="" alt="Foto do usuário" class="foto-usuario placeholder">
+                    <h2 class="nome-usuario"></h2>
+                </header>
+                
+                <p class="descricao">texto</p>
+                
+                <div class="midia">
+                    <img src="" alt="algo">
+                </div>
+                
+                <footer class="acoes">
+                    <button>❤️</button>
+                    <button>💬</button>
+                    <button>🔄</button>
+                </footer>
+                
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        
+        <nav class="navegacao-rodape">
+            <button class="btn-aba-footer" data-aba="videos" aria-label="Mostrar videos">videos</button>
+            <button class="btn-aba-footer" data-aba="posts" aria-label="Mostrar posts">posts</button>
+        </nav>
+        <p>&copy; 2025 Streamix </p>
+    </footer>
+
+</body>
+
+</html>
