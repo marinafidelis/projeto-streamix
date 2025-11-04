@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <div id="page" class="flex">
+        <div>
+            <header>
+                <img src="../Imagens/logo (2).png" alt="logo streamix" />
+
+                <div class="trilho" id="trilho" tabindex="0" aria-label="Alternar modo escuro">
+                    <div class="indicador"></div>
+                </div>
+            </header>
+
+            <main>
+                <section class="headline">
+                    <h1>Acesse a plataforma</h1>
+                </section>
+
+                <form id="loginForm">
+                    <div class="input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" required placeholder="Digite seu e-mail" />
+                        <span class="error"></span>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <div class="label-wrapper flex">
+                            <label for="senha">Senha</label>
+                            <span class="error"></span>
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+
+                        <input type="password" id="senha" placeholder="Digite sua senha" />
+                        <img onclick="togglePassword()" class="eye hide" src="../Imagens/olho-aberto.svg" alt="olho aberto" />
+                        <img onclick="togglePassword()" class="eye" src="../Imagens/olho-fechado.svg" alt="olho fechado" />
+                    </div>
+
+                    <button type="submit" id="entrarButton">Entrar</button>
+
+                    <div class="create-account">
+                        Ainda não tem conta?
+                        <a href="#">Inscreva-se</a>
+                    </div>
+                </form>
+            </main>
+
+            <footer class="footer">
+                <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+
+        <img src="../Imagens/edited_image.png" alt="Imagem decorativa da plataforma" />
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
