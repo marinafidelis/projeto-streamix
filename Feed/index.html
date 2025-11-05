@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
     <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,27 +16,22 @@
     <header>
         <div class="container-header">
 
-            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-        <div class="nome-redesocial">
-            <h1>Streamix</h1>
-        </div>    
+            <button class="menu-toggle" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
 
-        
-            <form class="pesquisa" role="search" aria-label="Pesquisar no feed">
-                <label for="busca" class="buscar"></label>
-                <input type="text" id="busca" name="busca" placeholder="Pesquisar" />
-            </form>
-            
-        <div class="perfil">
+            <div class="nome-redesocial">
+                <h1 class="streamix-logo">streamix</h1>
+            </div>
+
+            <div class="perfil">
                 <img src="/imagens/usuario.jpeg" alt="Foto do perfil" class="foto-perfil">
-        </div>
+            </div>
 
         </div>
-        
+
     </header>
 
     <aside class="menu-lateral">
-      
+
         <section class="menu-principal">
             <img src="/imagens/logotipo.png" alt="Logo Streamix" class="logo">
             <h3 class="principal">Principal</h3>
@@ -55,72 +51,87 @@
 
             <ul>
                 <li><a href="senha.html">Mudar senha</a></li>
-                <li><button id="btn-modo">🌙</button></li>
+                <li><button id="btn-modo"><i class="fa-solid fa-moon"></i></button></li>
             </ul>
         </section>
-                
-            <section class="criar">Postar</section>
-            
-        </aside>
-        
-        <main class="feed">
-            
-            <!--Aba de videos-->
-            <section id="feed-videos" class="aba ativa">
-                <h2>Videos</h2>
+
+        <section class="criar">Postar</section>
+
+    </aside>
+
+    <main class="feed">
+
+        <!--Aba de videos-->
+        <section id="feed-videos" class="aba ativa">
+
+            <!--Formulário de pesquisa (para vídeos)-->
+            <form class="pesquisa" role="search" aria-label="Pesquisar no feed">
+                <label for="busca" class="buscar"></label>
+                <input type="text" id="busca" name="busca" placeholder="Pesquisar" />
+            </form>
 
             <!--Exemplo de video do youtube-->
-            <article class="video-card"> 
+            <article class="video-card">
                 <iframe src="" frameborder="0"></iframe>
             </article>
         </section>
-        
+
         <!--Aba de posts-->
         <section id="feed-posts" class="aba">
-            <h2>Posts</h2>
-
+            
             <!--Formulario para criar posts-->
             <div class="formulario-post">
-                
+
                 <form action="#" method="post">
-                    <img src="/imagens/usuario1.jpeg" alt="foto de usuario" class="imagem-usuario">
+                    <img src="/imagens/usuario.jpeg" alt="foto de usuario" class="imagem-usuario">
                     <textarea name="texto" placeholder="O que está acontecendo?" required></textarea>
                     <button type="submit">Postar</button>
                 </form>
-                
+
             </div>
-            
+
             <!--Post já publicado-->
             <article class="post">
                 <header class="post-header">
                     <img src="" alt="Foto do usuário" class="foto-usuario placeholder">
                     <h2 class="nome-usuario"></h2>
                 </header>
-                
+
                 <p class="descricao">texto</p>
-                
+
                 <div class="midia">
                     <img src="" alt="algo">
                 </div>
-                
+
                 <footer class="acoes">
-                    <button>❤️</button>
-                    <button>💬</button>
-                    <button>🔄</button>
+                    <button class="curtir"><i class="fa-regular fa-heart"></i></button>
+                    <button class="comentar"><i class="fa-regular fa-comment"></i></button>
+                    <button class="compartilhar"><i class="fa-solid fa-retweet"></i></button>
                 </footer>
-                
+
             </article>
         </section>
 
     </main>
 
     <footer class="rodape">
-        
         <nav class="navegacao-rodape">
-            <button class="btn-aba-footer" data-aba="videos" aria-label="Mostrar videos">videos</button>
-            <button class="btn-aba-footer" data-aba="posts" aria-label="Mostrar posts">posts</button>
+            <button class="btn-aba-footer active" data-aba="home" aria-label="Home">
+                <i class="fa-solid fa-house"></i>
+            </button>
+            <button class="btn-aba-footer" data-aba="videos" aria-label="Vídeos">
+                <i class="fa-brands fa-youtube"></i>
+            </button>
+            <button class="btn-aba-footer" data-aba="posts" aria-label="Posts">
+                <i class="fa-solid fa-mobile-alt"></i>
+            </button>
+            <button class="btn-aba-footer" data-aba="explorar" aria-label="Explorar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="btn-aba-footer" data-aba="mensagens" aria-label="Mensagens">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
         </nav>
-        <p>&copy; 2025 Streamix </p>
     </footer>
 
 </body>
