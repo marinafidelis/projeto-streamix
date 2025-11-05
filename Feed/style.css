@@ -1,0 +1,330 @@
+/*ESTILO BASE (MOBILE FIRST)*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*HEADER MOBILE*/
+
+header {
+    background-color: rgba(138, 87, 161, 0.1);
+    padding: 15px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.streamix-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    background: linear-gradient(to bottom, #4c00fc, #4B0082);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.nome-redesocial .streamix-logo {
+    font-size: 28px;
+}
+
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6c53a5;
+    cursor: pointer;
+}
+
+.menu-toggle i,
+#btn-modo i {
+    font-size: 24px;
+    color: #2b2b2c;
+}
+
+.menu-toggle:hover i,
+#btn-modo:hover i {
+    color: #38095f;
+}
+
+.pesquisa {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.pesquisa input {
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: #f0eaff;
+    color: #2d2d2d;
+}
+
+.perfil img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*MAIN*/
+
+#feed-videos,
+#feed-posts {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#feed-videos,
+#feed-posts {
+    transition: opacity 0.3s ease;
+}
+
+.oculto {
+    display: none;
+    opacity: 0;
+}
+
+.video-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.post .descricao {
+    margin: 8px 0;
+}
+
+.foto-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+/*FORMULÁRIO DE POSTAGEM*/
+
+.formulario-post form {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.formulario-post img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.formulario-post textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-family: inherit;
+}
+
+.formulario-post button {
+    align-self: flex-end;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #6c53a5;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*AÇÕES DE POSTS*/
+
+footer.acoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 8px;
+}
+
+footer.acoes button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.acoes button:hover {
+    color: #6c53a5;
+}
+
+/*MENU LATERAL*/
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1001;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-lateral.ativo {
+    left: 0;
+}
+
+.menu-lateral ul li {
+    margin-bottom: 12px;
+}
+
+.menu-lateral .criar {
+    margin-top: auto;
+    background-color: #4a5dce;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*RODAPÉ MOBILE*/
+
+.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(138, 87, 161, 0.1);
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 0;
+    z-index: 1000;
+}
+
+.navegacao-rodape {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 500px;
+    gap: 15px;
+}
+
+.rodape button {
+    font-size: 20px;
+    color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+.rodape button:hover,
+.rodape button:focus,
+.rodape button:active {
+    color: #080808;
+}
+
+.rodape button i {
+    pointer-events: none;
+}
+
+.rodape button:hover {
+    color: #38095f;
+}
+
+.rodape button:focus,
+.rodape button,
+:active {
+    color: #0f0f0f;
+}
