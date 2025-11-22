@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
     <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="body">
 
     <header>
         <div class="container-header">
@@ -22,117 +25,218 @@
                 <h1 class="streamix-logo">streamix</h1>
             </div>
 
+            <form class="pesquisa-header" role="search" aria-label="Pesquisar">
+                <input type="text" id="busca-header" name="busca" placeholder="Buscar" />
+                <button type="submit" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
             <div class="perfil">
-                <img src="/imagens/usuario.jpeg" alt="Foto do perfil" class="foto-perfil">
+                <a href="/Tela de perfil/index.html">
+                    <img src="/imagens/usuario.png" alt="Foto do perfil" class="foto-perfil">
+                </a>
             </div>
 
         </div>
 
     </header>
 
+    <!--- Menu Lateral --->
+   
     <aside class="menu-lateral">
 
         <section class="menu-principal">
             <img src="/imagens/logotipo.png" alt="Logo Streamix" class="logo">
-            <h3 class="principal">Principal</h3>
+            <h3 class="principal"><strong>Principal</strong></h3>
 
             <ul>
-                <li><button class="btn-aba" data-aba="videos">Vídeos</button></li>
-                <li><button class="btn-aba" data-aba="posts">Posts</button></li>
-                <li><a href="explorar.html">Explorar</a></li>
-                <li><a href="mensagem.html">Mensagens</a></li>
-                <li><a href="#">Salvos</a></li>
-                <li><a href="#">Minhas Curtidas</a></li>
+                <li><button class="btn-aba" data-aba="videos"><i class="fab fa-youtube"></i>Vídeos</button></li>
+                <li><button class="btn-aba" data-aba="posts"><i class="fa-regular fa-pen-to-square"></i>Posts</button>
+                </li>
+                <li>
+                    <button id="btn-notificacao-lateral" type="button"><i
+                            class="fa-regular fa-bell"></i>Notificações<span id="badge-notificacao"
+                            class="badge"></span>
+                    </button>
+
+                    <div id="dropdown-notificacao" class="dropdown">
+                        <p>Nenhuma notificação nova.</p>
+                        <ul id="lista-notificacao"></ul>
+                    </div>
+                </li>
+
+                <li><a href="mensagem.html"><i class="fa-regular fa-envelope"></i>Mensagens</a></li>
+                <li>
+                    <button id="btn-salvos">
+                        <i class="fa-regular fa-bookmark"></i> Salvos
+                    </button>
+                </li>
+
+                <button id="btn-minhas-curtidas"><i class="fa-regular fa-heart"></i> Minhas Curtidas</button>
+                </li>
+
             </ul>
         </section>
+
+        <!-- ===== MODAL MINHAS CURTIDAS ===== -->
+        <div id="modal-curtidas" class="modal-overlay escondido">
+            <div class="modal-conteudo">
+                <header class="modal-header">
+                    <h2>Minhas Curtidas</h2>
+                    <button id="fechar-modal-curtidas" class="fechar-modal" aria-label="Fechar modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <div id="lista-curtidas-modal" class="modal-corpo">
+                    <!-- Os posts curtidos aparecerão aqui via JavaScript -->
+                    <p>Você ainda não curtiu nenhum post.</p>
+                </div>
+            </div>
+        </div>
 
         <section class="menu-configuracao">
-            <h3 class="configuracao">Configuração</h3>
+            <h3 class="configuracao"><strong>Configuração</strong></h3>
 
             <ul>
-                <li><a href="senha.html">Mudar senha</a></li>
-                <li><button id="btn-modo"><i class="fa-solid fa-moon"></i></button></li>
+                <li><a href="../TRABALHO CORRETO✅/ESQUECI SENHA/index.html"><i class="fas fa-sync"></i>Alterar Senha</a>
+                </li>
+
+
+                <li><button id="btn-modo"><i class="fa-regular fa-moon"></i>Modo Escuro</button></li>
             </ul>
         </section>
 
-        <section class="criar">Postar</section>
+        <section class="criar">
+            <li><button>Postar</button></li>
+        </section>
 
     </aside>
 
+    <div class="overlay-menu" id="overlay-menu"></div>
+
     <main class="feed">
 
-        <!--Aba de videos-->
+        <!--Aba de vídeos-->
         <section id="feed-videos" class="aba ativa">
 
-            <!--Formulário de pesquisa (para vídeos)-->
+            <!--Formulário de pesquisa-->
             <form class="pesquisa" role="search" aria-label="Pesquisar no feed">
-                <label for="busca" class="buscar"></label>
-                <input type="text" id="busca" name="busca" placeholder="Pesquisar" />
+                <label for="busca" class="buscar-feed"></label>
+                <input type="text" id="busca" name="busca" placeholder="Buscar" />
+                <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
-            <!--Exemplo de video do youtube-->
-            <article class="video-card">
-                <iframe src="" frameborder="0"></iframe>
-            </article>
         </section>
 
         <!--Aba de posts-->
         <section id="feed-posts" class="aba">
-            
-            <!--Formulario para criar posts-->
-            <div class="formulario-post">
 
-                <form action="#" method="post">
-                    <img src="/imagens/usuario.jpeg" alt="foto de usuario" class="imagem-usuario">
-                    <textarea name="texto" placeholder="O que está acontecendo?" required></textarea>
-                    <button type="submit">Postar</button>
-                </form>
+            <!-- Wrapper para criar layout de duas colunas no desktop -->
+            <div class="layout-principal">
+
+                <div class="coluna-central">
+
+                    <!--Formulario para criar posts-->
+                    <div class="formulario-post">
+                        <form id="form-post">
+                            <div class="post-header">
+                                <img src="/imagens/usuario.png" alt="foto de usuario" class="imagem-usuario">
+                                <textarea id="texto-post" name="texto" placeholder="O que está acontecendo?"
+                                    required></textarea>
+                            </div>
+                            <div class="post-footer">
+                                <button type="submit">Postar</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!-- Lista onde os posts vão ser renderizados via JS -->
+                    <div id="lista-posts"></div>
+
+                </div>
+
+                <!--Coluna direita: preenche espaço vazio no desktop-->
+                <div class="coluna-direita">
+                    <h3>Sugestões</h3>
+                    <p> Em desenvolvimento
+                    </p>
+                </div>
 
             </div>
 
-            <!--Post já publicado-->
-            <article class="post">
-                <header class="post-header">
-                    <img src="" alt="Foto do usuário" class="foto-usuario placeholder">
-                    <h2 class="nome-usuario"></h2>
-                </header>
-
-                <p class="descricao">texto</p>
-
-                <div class="midia">
-                    <img src="" alt="algo">
-                </div>
-
-                <footer class="acoes">
-                    <button class="curtir"><i class="fa-regular fa-heart"></i></button>
-                    <button class="comentar"><i class="fa-regular fa-comment"></i></button>
-                    <button class="compartilhar"><i class="fa-solid fa-retweet"></i></button>
-                </footer>
-
-            </article>
         </section>
 
     </main>
 
+    <!-----Modal de Comentários ----->
+    <div id="modal-comentarios" class="modal-overlay escondido">
+        <div class="modal-conteudo">
+            <header class="modal-header">
+                <h2>Comentários</h2>
+                <button id="fechar-modal-comentarios" class="fechar-modal" aria-label="Fechar modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+        
+            <div id="post-original-modal" class="post-original"></div>
+
+      
+            <div id="lista-comentarios-modal" class="modal-corpo"></div>
+
+            <!-- Formulário para adicionar um novo comentário -->
+            <footer class="modal-footer-comentario">
+                <form id="form-comentario">
+                    <img src="/imagens/usuario.png" alt="Sua foto" class="avatar-comentario">
+                    <input type="text" id="input-comentario" placeholder="Adicione um comentário..." required>
+                    <button type="submit">Publicar</button>
+                </form>
+            </footer>
+        </div>
+    </div>
+
+   
+<div id="modal-salvos" class="modal-overlay escondido">
+  <div class="modal-conteudo">
+    <header class="modal-header">
+      <h2>Salvos</h2>
+      <button id="fechar-modal-salvos" class="fechar-modal" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+    <div id="lista-salvos-modal" class="modal-corpo">
+      <!-- Os posts salvos falsos vão aparecer aqui via JS -->
+    </div>
+  </div>
+</div>
+
+
+
     <footer class="rodape">
         <nav class="navegacao-rodape">
-            <button class="btn-aba-footer active" data-aba="home" aria-label="Home">
+            <button id="btn-home" class="btn-aba-footer" aria-label="Home">
                 <i class="fa-solid fa-house"></i>
             </button>
+
             <button class="btn-aba-footer" data-aba="videos" aria-label="Vídeos">
                 <i class="fa-brands fa-youtube"></i>
             </button>
             <button class="btn-aba-footer" data-aba="posts" aria-label="Posts">
-                <i class="fa-solid fa-mobile-alt"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
             </button>
-            <button class="btn-aba-footer" data-aba="explorar" aria-label="Explorar">
-                <i class="fa-solid fa-magnifying-glass"></i>
+            <button id="btn-notificacao-footer" aria-label="Notificações">
+                <i class="fa-solid fa-bell"></i>
             </button>
+
             <button class="btn-aba-footer" data-aba="mensagens" aria-label="Mensagens">
                 <i class="fa-solid fa-envelope"></i>
             </button>
         </nav>
     </footer>
+
+    <script src="/Feed/script.js"></script>
 
 </body>
 
