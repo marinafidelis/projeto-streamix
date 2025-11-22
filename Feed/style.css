@@ -95,9 +95,9 @@ header {
 .pesquisa button {
   height: 42px; 
   padding: 0 16px;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0; 
   border: 1px solid #ccc;
-  border-left: none; 
+  border-left: none;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -152,13 +152,16 @@ header {
 /*MAIN*/
 
 main.feed {
-  position: relative; 
+  position: relative;
   max-width: 700px; 
-  margin: 0 auto;
+  margin: 0 auto; 
   padding: 80px 20px 20px;
   margin-top: 10px;
 }
-
+#feed-posts .post-header {
+  position: relative;
+  z-index: 0;
+}
 #feed-videos,
 #feed-posts {
   transition: opacity 0.3s ease;
@@ -203,6 +206,7 @@ main.feed {
 }
 
 /*FORMULÁRIO DE POSTAGEM*/
+
 .formulario-post {
   background-color: #fff;
   border: 1px solid #e6e6e6;
@@ -298,7 +302,6 @@ footer.acoes {
   color: #4b0082;
 }
 
-/* === POSTS === */
 
 #lista-posts {
   display: flex;
@@ -329,7 +332,6 @@ footer.acoes {
   justify-content: flex-start; 
   text-align: left;
 }
-
 
 .foto-usuario {
   width: 40px;
@@ -377,36 +379,66 @@ footer.acoes {
 .menu-lateral {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
+  left: -250px; 
+  width: 220px; 
+  height: 100vh; 
   background-color: #fff;
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid #eee;
   transition: left 0.3s ease;
   z-index: 1001;
-  padding: 20px;
+  padding: 24px 18px; 
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto; 
 }
 
 .menu-lateral.ativo {
-  left: 0;
+  left: 0; 
 }
 
-.menu-lateral.logo {
-  width: 50px;
-  height: 50px;
+.menu-lateral .logo {
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   margin: 0 auto 10px;
   display: block;
-  opacity: 0.9;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 12px;
 }
 
-.menu-lateral .logo:hover {
+.menu-lateral ul li a,
+.menu-lateral ul li button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #2d2d2d;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.menu-lateral ul li a:hover,
+.menu-lateral ul li button:hover {
+  background-color: #f2f2f2;
+  color: #4b4b4b;
   transform: scale(1.05);
-  opacity: 1;
+}
+
+.menu-lateral .criar {
+  margin-top: auto;
+  background-color: #4b0082;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-lateral .criar:hover {
+  background-color: #2b0057;
 }
 
 .menu-lateral ul li {
@@ -428,7 +460,8 @@ footer.acoes {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 1000; 
+  z-index: 1000;
+  display: none; 
 }
 
 .overlay-menu.ativo {
@@ -461,7 +494,7 @@ footer.acoes {
 
 .rodape button {
   font-size: 22px;
-  color: #4b0082;
+  color: #272629;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -486,7 +519,7 @@ footer.acoes {
 }
 
 .rodape .btn-aba-footer.ativo {
-  background-color: cc#26076d;
+  background-color: #26076d;
   color: #fff;
   font-weight: bold;
 }
@@ -497,13 +530,23 @@ footer.acoes {
   transform: scale(1.1);
 }
 
-.rodape button:focus,
-.rodape button,
-:active {
-  color: #0f0f0f;
+.rodape button:focus {
+  outline: none;
+  color: #000; 
 }
 
-/* === SCROLLBAR DO MENU LATERAL === */
+.rodape button:hover,
+.rodape button:active {
+  color: #7a42f4;
+  transform: scale(1.1);
+}
+
+.rodape .btn-aba-footer.ativo {
+  background-color: #20133a;
+  color: #fff;
+  font-weight: bold;
+}
+
 
 .menu-lateral::-webkit-scrollbar {
   width: 6px; 
@@ -523,6 +566,240 @@ footer.acoes {
 
 .coluna-direita {
   display: none;
+}
+
+/* ESTILOS DO MODAL */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; 
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.escondido {
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px; 
+  max-height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.fechar-modal {
+  font-size: 24px;
+  color: #888;
+}
+.fechar-modal:hover {
+  color: #111;
+}
+
+.modal-corpo {
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.modal-corpo .post {
+  border: 1px solid #f0f0f0;
+  box-shadow: none;
+}
+
+/* DROPDOWN DE NOTIFICAÇÕES*/
+
+.menu-lateral ul li {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute; 
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  z-index: 1002;
+  padding: 10px;
+}
+
+.dropdown.visivel {
+  display: block;
+}
+
+#dropdown-notificacao p {
+  text-align: center;
+  color: #888;
+  padding: 15px;
+}
+
+
+/* ======================= ESTILOS DO MODAL ======================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* Atalho para top: 0; left: 0; right: 0; bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Z-index alto para ficar na frente de tudo */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.escondido {
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px; 
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.fechar-modal {
+  font-size: 24px;
+  color: #888;
+}
+.fechar-modal:hover {
+  color: #111;
+}
+
+.modal-corpo {
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.modal-corpo .post {
+  border: 1px solid #f0f0f0;
+  box-shadow: none;
+}
+
+/* MODAL DE COMENTÁRIOS */
+
+.post-original {
+  padding: 0 10px 15px 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.post-original .post {
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.item-comentario {
+  display: flex;
+  gap: 10px;
+  padding: 8px 10px;
+}
+
+.avatar-comentario {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.conteudo-comentario p {
+  margin: 0;
+  font-size: 14px;
+  background-color: #f0f2f5;
+  padding: 8px 12px;
+  border-radius: 18px;
+  line-height: 1.4;
+}
+
+.conteudo-comentario p strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.modal-footer-comentario {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+#form-comentario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#input-comentario {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+#input-comentario:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+#form-comentario button {
+  background: none;
+  border: none;
+  color: #4b0082;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /*MODELO RESPONSIVO: TABLET e DESKTOP*/
@@ -574,8 +851,8 @@ footer.acoes {
   }
 
   .menu-lateral .logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto 12px;
     display: block;
     border-radius: 10px;
@@ -639,7 +916,7 @@ footer.acoes {
     max-width: calc(100% - 220px);
   }
 
-   #feed-posts .post-header {
+  #feed-posts .post-header {
     position: static;
     display: flex;
     flex-direction: row;
@@ -674,3 +951,224 @@ footer.acoes {
   }
 }
 
+/*DESKTOP*/
+
+@media (min-width: 1024px) {
+  header {
+    top: 0;
+    left: 220px;
+    width: calc(100% - 220px);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    padding: 10px 24px;
+    height: 55px;
+    z-index: 1000;
+  }
+
+  .container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .nome-redesocial {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0;
+    margin-right: 40px;
+  }
+
+  .streamix-logo {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #4c00fc, #4b0082);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .pesquisa-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    max-width: 500px;
+  }
+
+  .pesquisa-header input {
+    flex: 1;
+    height: 42px;
+    padding: 0 16px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-right: none;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-left: 10px;
+  }
+
+  .pesquisa-header input:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background-color: #fff;
+  }
+
+  .pesquisa-header button {
+    height: 42px;
+    padding: 0 16px;
+    border-radius: 0 20px 20px 0;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .pesquisa-header button:hover {
+    background-color: #e8e8e8;
+    transform: scale(1.03);
+  }
+
+  .pesquisa {
+    display: none !important;
+  }
+
+  .perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 20px;
+  }
+
+  .perfil img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .rodape {
+    display: none !important;
+  }
+
+  main.feed {
+    margin-left: 220px;
+    padding: 80px 20px 20px;
+    max-width: 700px;
+  }
+
+  .aba {
+    display: none;
+    padding: 0; 
+  }
+
+  #feed-videos.ativa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  #lista-videos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  #feed-posts.ativa {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #lista-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #feed-posts .post {
+    display: block; 
+    position: relative;
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+
+  #feed-posts .post-header {
+    position: static;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0 0 4px 0; 
+    padding: 0;
+  }
+
+  #feed-posts .foto-usuario {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  #feed-posts .descricao {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  #feed-posts footer.acoes {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 8px;
+    padding: 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .layout-principal {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .coluna-central {
+    width: 700px; 
+    flex-shrink: 0;
+  }
+
+  .coluna-direita {
+    display: block;
+    width: 300px;
+    flex-shrink: 0; 
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; 
+    top: 80px; 
+    max-height: calc(100vh - 100px); 
+    overflow-y: auto;
+    margin-left: 20px;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+}
