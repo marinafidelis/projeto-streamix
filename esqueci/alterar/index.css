@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset básico + fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Formata o corpo da página */
+body {
+  min-height: 100vh;                     
+  display: flex;                        
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2ff;             
+  padding: 15px;
+}
+
+/*  CARD PRINCIPAL (container do conteúdo)  */
+.main-card {
+  background: #ffffff;                    
+  width: 900px;
+  max-width: 98%;                         
+  border-radius: 12px;                   
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); 
+  padding: 2.5rem 3rem;
+  margin: auto;
+  transition: .3s;                        
+}
+
+/*  CABEÇALHO  */
+header {
+  display: flex;                          
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+header img {
+  width: 160px;                           
+  margin-top: -20px;
+}
+
+/* LOGOS MODO CLARO / ESCURO  */
+
+/* Logo escura começa escondida */
+.logo-dark {
+  display: none;
+}
+
+/* Quando o modo escuro ativa, troca automaticamente */
+body.dark .logo-light {
+  display: none;
+}
+
+body.dark .logo-dark {
+  display: block;
+}
+
+
+/*  BOTÃO DARK MODE (trilho) */
+.trilho {
+  width: 60px;
+  height: 30px;
+  background-color: #4d4d4d;             
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;                      
+}
+
+/* bolinha dentro do trilho */
+.trilho .indicador {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;                             
+  top: 2px;
+  transition: 0.5s;
+}
+
+/* quando o dark mode ativa */
+.trilho.dark {
+  background-color: #c3c3c3;
+}
+
+/* move a bolinha para a direita */
+.trilho.dark .indicador {
+  left: 32px;
+}
+
+/*  TÍTULO  */
+.esqueci-senha h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Barrinha decorativa embaixo do título */
+.esqueci-senha h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #6c63ff;
+  border-radius: 10px;
+  margin-top: 0.4rem;
+}
+
+/*  FORMULÁRIOS  */
+.esqueci-senha form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;     
+  gap: 1.3rem;                
+}
+/*  INPUTS  */
+input,
+.input-wrapper input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 1px 1px 6px #0000001a;     
+  transition: .2s;
+}
+
+input:focus {
+  outline: 1px solid #6c63ff;           
+  background-color: #fafaff;           
+}
+
+/*  ÍCONES DE OLHINHO  */
+.input-wrapper {
+  position: relative;                    
+}
+
+.eye,
+.eye2,
+.eye3 {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* usado para esconder o ícone de olho */
+.hide { display: none !important; }
+
+/*  BOTÃO PRINCIPAL  */
+.esqueci-senha button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6c63ff;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.esqueci-senha button:hover {
+  background-color: #5a54e6;
+}
+
+/* MENSAGENS DE ERRO / SUCESSO  */
+.mensagem { 
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: none;   /* começa escondido */
+}
+
+.mensagem.sucesso {
+  display: block;
+  background-color: #d1f5d3;
+  color: #0f8a10;
+}
+
+.mensagem.erro {
+  display: block;
+  background-color: #ffd7d7;
+  color: #a10f0f;
+}
+
+/* esconde o que não deve aparecer ainda */
+.hidden {
+  display: none !important;
+}
+
+/* RODAPÉ */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/*  MODO ESCURO COMPLETO  */
+body.dark {
+  background-color: #1b1b1b;
+  color: #e4e3fa;
+}
+
+body.dark .main-card {
+  background-color: #181818;
+  border: 1px solid rgba(108, 99, 255, 0.25);
+}
+
+body.dark input {
+  background-color: #293e8581;          
+  color: #f3f2ff;
+  border: 1px solid rgba(140, 130, 255, 0.3);
+}
+
+body.dark input::placeholder {
+  color: #a9a7d9;
+}
+
+body.dark input:focus {
+  outline: 1px solid #1b0ab3;
+  background-color: #201e45;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+}
+
+body.dark .esqueci-senha button:hover {
+  background-color: #7a71ff;
+}
+
+body.dark .eye,
+body.dark .eye2,
+body.dark .eye3 {
+  filter: brightness(0) invert(1);      /* deixa brancos no dark */
+}
+
+body.dark footer {
+  color: #b6b5cf;
+}
+
+body.dark .esqueci-senha h1 {
+  color: #6a2cdd;
+}
+
+body.dark .esqueci-senha h1::after {
+  background-color: #6c63ff;
+}
+
+body.dark .trilho {
+  background-color: #504d81; 
+}
+
+body.dark .trilho .indicador {
+  background-color: #ffffff; 
+}
+
+/*  RESPONSIVIDADE (TABLETS)  */
+@media (max-width: 992px) {
+
+  .main-card {
+    width: 95%;
+    padding: 2rem;
+  }
+
+  header img {
+    width: 140px;
+    margin-top: -10px;
+  }
+
+  .esqueci-senha h1 {
+    font-size: 1.6rem;
+  }
+
+  .eye,
+  .eye2,
+  .eye3 {
+    width: 22px;
+    height: 22px;
+    right: 0.85rem;
+  }
+}
+
+/*  RESPONSIVIDADE (CELULARES)  */
+@media (max-width: 600px) {
+
+  body {
+    padding: 15px;
+    align-items: flex-start;             /* conteúdo sobe */
+  }
+
+  .main-card {
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: none;                    /* remove sombra no mobile */
+  }
+
+  header {
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header img {
+    width: 120px;
+  }
+
+  .trilho {
+    width: 50px;
+    height: 26px;
+  }
+
+  .trilho .indicador {
+    width: 22px;
+    height: 22px;
+  }
+
+  .esqueci-senha h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .esqueci-senha button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .eye,
+  .eye2,
+  .eye3 {
+    width: 20px;
+    height: 20px;
+    right: 0.75rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+}
+
+/* Pequena animação para suavizar transições */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
