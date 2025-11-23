@@ -1,0 +1,422 @@
+/* IMPORTANDO GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: #7c3aed;
+    font-weight: 700;
+    transition: .2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Link “Esqueceu a senha?” */
+.label-wrapper a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #7c3aed;
+}
+
+/* Modo escuro – links */
+body.dark a {
+    color: #9f67ff;
+}
+
+body.dark a:hover {
+    text-decoration: underline;
+}
+
+/*LAYOUT PRINCIPAL */
+#page {
+    height: 100vh;
+    display: flex;
+}
+
+#left,
+#right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  HEADER (Logo + botão do modo escuro) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2rem;
+}
+
+.logo {
+    width: 20rem;
+}
+
+/* Logo escura começa escondida */
+.logo-dark {
+    display: none;
+}
+
+/* Quando o modo escuro está ativo, troca as logos */
+body.dark .logo-light {
+    display: none;
+}
+
+body.dark .logo-dark {
+    display: block;
+}
+
+/*  MODO ESCURO - TRILHO  */
+
+.trilho {
+    width: 60px;
+    height: 30px;
+    background-color: #4d4d4d;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trilho .indicador {
+    width: 26px;
+    height: 26px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: .3s;
+}
+
+/* ESTADO ATIVADO DO MODO ESCURO*/
+.trilho.dark {
+    background-color: #6c63ff;
+    
+}
+
+.trilho.dark .indicador {
+    left: 32px;
+    background: #fff;
+}
+
+main {
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*  TÍTULO */
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #2e2e2e;
+    margin-bottom: 3rem;
+}
+
+/*  FORMULÁRIO  */
+
+form {
+    width: 100%;
+    max-width: 45rem;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .1rem;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 1.1rem;
+    border: none;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    background: #fff;
+    box-shadow: 1px 1px 6px #0000001a;
+}
+
+input:focus {
+    outline: 1px solid #6c63ff;
+    background-color: #fafaff;
+}
+
+/* ÍCONE DO OLHO (SENHA) */
+.eye {
+    width: 2rem;
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+/*  BOTÃO LOGIN  */
+
+button {
+    width: 100%;
+    padding: 1.6rem;
+    background: #6c63ff;
+    border-radius: .4rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #5a54e6;
+    transform: translateY(-2px);
+}
+
+
+
+footer {
+    padding: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: auto;
+    color: #555;
+}
+
+/*  MODO ESCURO  */
+
+body.dark {
+    background: #1b1b1b;
+    color: #e4e3fa;
+}
+
+body.dark input {
+    background-color: #293e8581;
+    color: #f3f2ff;
+    border: 1px solid rgba(140, 130, 255, 0.3);
+    box-shadow: 0 0 6px rgba(140, 130, 255, 0.1);
+}
+
+body.dark input:focus {
+    outline: 1px solid #1b0ab3;
+    background-color: #201e45;
+}
+
+body.dark h1 {
+    color: #c9c7ff;
+}
+
+body.dark label {
+    color: #fcfcfc;
+}
+
+body.dark .eye {
+    filter: brightness(0) invert(1);
+}
+
+body.dark footer {
+    color: #b6b5cf;
+}
+
+/*  RESPONSIVIDADE  */
+
+@media (max-width: 900px) {
+
+    #right {
+        display: none;
+    }
+
+    #left {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding: 2rem 2rem;
+    }
+
+    header img {
+        width: 18rem;
+    }
+
+    main {
+        flex: 1;
+        padding: 2.5rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+/* TABLET */
+@media (min-width: 600px) and (max-width: 900px) {
+
+    #right {
+        display: none;
+    }
+
+    #left {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding: 1.8rem 2rem;
+    }
+
+    header img {
+        width: 17rem;
+    }
+
+    main {
+        flex: 1;
+        padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        max-width: 42rem;
+        gap: 2.2rem;
+    }
+
+    input {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+    }
+
+    button {
+        padding: 1.7rem;
+        font-size: 1.6rem;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+
+    header img {
+        width: 15rem;
+    }
+
+    main {
+        padding: 2rem 1.4rem;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 380px) {
+
+    header img {
+        width: 13rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+}
+
+/*  MENSAGENS (SUCESSO/ERRO)  */
+.mensagem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeIn 0.5s ease;
+}
+
+.mensagem.erro {
+    background-color: #e53835da;
+}
+/* Pequena animação  */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

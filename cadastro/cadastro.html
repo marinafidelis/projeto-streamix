@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de cadastro da Streamix.">
+  <link rel="stylesheet" href="cadstro.css">
+  <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>Cadastre-se | Streamix</title>
+</head>
+
+<body>
+  <div id="mensagemSucesso" class="mensagem"></div>
+  <div id="mensagemErro" class="mensagem erro"></div>
+  <div class="main-card">
+    <header>
+      <!-- logo modo claro -->
+      <img class="logo logo-light" src="../img/logo(modo claro).png" alt="logo streamix (modo claro)" />
+
+      <!-- logo modo escuro-->
+      <img class="logo logo-dark" src="../img/logo(modo escuro).png" alt="logo streamix (modo escuro)">
+
+      <div class="trilho" id="trilho" tabindex="0" aria-label="Alternar modo escuro">
+        <div class="indicador"></div>
+      </div>
+    </header>
+
+
+    <h1 class="page-title">Cadastre-se</h1>
+
+    <main>
+      <section class="form-section">
+        <form id="form">
+          <div class="form-grid">
+            <div class="input-box">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+              <span class="error"></span>
+            </div>
+
+            <div class="input-box">
+              <label for="usuario">Usuário</label>
+              <input id="usuario" type="text" name="usuario" placeholder="Digite seu usuário" required>
+              <span class="error"></span>
+            </div>
+
+            <div class="input-box">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+              <span class="error"></span>
+            </div>
+
+            <div class="input-box">
+              <label for="number">Celular</label>
+              <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+              <span class="error"></span>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="senha">Senha</label>
+              <input id="senha" type="password" placeholder="Digite sua senha" required>
+              <span class="error"></span>
+              <img onclick="togglePassword()" class="eye hide" src="../img/olho-aberto.svg" alt="olho aberto" />
+              <img onclick="togglePassword()" class="eye" src="../img/olho-fechado.svg" alt="olho fechado" />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="confirmSenha">Confirme a senha</label>
+              <input id="confirmSenha" type="password" placeholder="Confirme sua senha" required>
+              <span class="error"></span>
+              <img onclick="togglePasswordConfirm()" class="eye2 hide" src="../img/olho-aberto.svg" alt="olho aberto" />
+              <img onclick="togglePasswordConfirm()" class="eye2" src="../img/olho-fechado.svg" alt="olho fechado" />
+            </div>
+          </div>
+
+          <div class="gender-section">
+            <h6>Gênero</h6>
+            <div class="gender-group">
+              <label><input type="radio" name="gender" value="feminino" required> Feminino</label>
+              <label><input type="radio" name="gender" value="masculino" required> Masculino</label>
+              <label><input type="radio" name="gender" value="outros" required> Outros</label>
+            </div>
+          </div>
+
+
+          <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script src="../storage.js"></script>
+  <script src="cadstro.js"></script>
+</body>
+
+</html>

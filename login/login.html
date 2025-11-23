@@ -2,22 +2,32 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
     <link rel="icon" href="/imagens/logotipo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Streamix - Login</title>
 </head>
 
 <body>
-    <div id="page" class="flex">
-        <div>
-            <header>
-                <img src="../Imagens/logo (2).png" alt="logo streamix" />
+    <div id="mensagemBoasVindas" class="mensagem"></div>
+    <div id="mensagemErro" class="mensagem erro"></div>
 
+    <div id="page">
+
+        <div id="left">
+
+            <header>
+                <!-- logo modo claro -->
+                <img  class="logo logo-light"  src="../img/logo(modo claro).png" alt="logo streamix (modo claro)" />
+
+                <!-- logo modo escuro-->
+                <img class="logo logo-dark" src="../img/logo(modo escuro).png" alt="logo streamix (modo escuro)">
+
+                <!-- Botão modo escuro -->
                 <div class="trilho" id="trilho" tabindex="0" aria-label="Alternar modo escuro">
                     <div class="indicador"></div>
                 </div>
@@ -29,41 +39,50 @@
                 </section>
 
                 <form id="loginForm">
+
                     <div class="input-wrapper">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" required placeholder="Digite seu e-mail" />
+                        <label for="identificador">E-mail, Usuário ou Celular</label>
+                        <input id="identificador" type="text" required
+                            placeholder="Digite seu e-mail, usuário ou celular" />
                         <span class="error"></span>
                     </div>
 
                     <div class="input-wrapper">
-                        <div class="label-wrapper flex">
+                        <div class="label-wrapper">
                             <label for="senha">Senha</label>
-                            <span class="error"></span>
-                            <a href="#">Esqueceu a senha?</a>
+                            <a href="../ESQUECI SENHA/index.html?modo=recuperar">Esqueceu a senha?</a>
                         </div>
 
                         <input type="password" id="senha" placeholder="Digite sua senha" />
-                        <img onclick="togglePassword()" class="eye hide" src="../Imagens/olho-aberto.svg" alt="olho aberto" />
-                        <img onclick="togglePassword()" class="eye" src="../Imagens/olho-fechado.svg" alt="olho fechado" />
+                        <img onclick="togglePassword()" class="eye hide" src="../img/olho-aberto.svg"
+                            alt="olho aberto" />
+                        <img onclick="togglePassword()" class="eye" src="../img/olho-fechado.svg" alt="olho fechado" />
+                        <span class="error"></span>
                     </div>
 
                     <button type="submit" id="entrarButton">Entrar</button>
 
                     <div class="create-account">
                         Ainda não tem conta?
-                        <a href="#">Inscreva-se</a>
+                        <a href="../cadastro/cadastro.html">Inscreva-se</a>
                     </div>
+
                 </form>
             </main>
 
-            <footer class="footer">
+            <footer>
                 <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
             </footer>
+
         </div>
 
-        <img src="../Imagens/edited_image.png" alt="Imagem decorativa da plataforma" />
+        <div id="right">
+            <img src="../img/edited_image.png" alt="Imagem decorativa da plataforma" />
+        </div>
+
     </div>
 
+    <script src="../storage.js"></script>
     <script src="login.js"></script>
 </body>
 
