@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chat.css">
+  <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+  <title>Mensagens</title>
+
+  <!-- Font Awesome (ícones) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</head>
+
+<body>
+
+  <main id="mensagens">
+
+    <!-- Botão de voltar DO CHAT (celular) -->
+    <button id="btn-voltar">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <!-- LISTA DE CONVERSAS -->
+    <section id="lista-de-conversas" aria-label="lista de conversas">
+
+      <!-- Cabeçalho da lista -->
+      <header class="conversas-header">
+
+        <!-- Botão para voltar ao feed -->
+        <button id="btn-voltar-feed">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h2 id="nome-usuario">D'avilla</h2>
+      </header>
+
+      <!-- Barra de pesquisa -->
+      <div class="barra-pesquisa" role="search">
+        <input type="search" id="buscar" name="buscar" placeholder="Pesquisar" autocomplete="off" />
+      </div>
+
+      <!-- Lista de contatos -->
+      <ul id="lista-contatos">
+
+        <li class="contato" data-username="jujuba">
+          <img src="../Imagens/menina1.png" alt="foto de perfil de jujuba">
+          <div class="info">
+            <h3>jujuba</h3>
+            <p>Online agora</p>
+          </div>
+        </li>
+
+        <li class="contato" data-username="Mario">
+          <img src="../Imagens/menino1.png" alt="foto de perfil de Mario">
+          <div class="info">
+            <h3>Mario</h3>
+            <p>Online há 10 min</p>
+          </div>
+        </li>
+
+        <li class="contato" data-username="Vick">
+          <img src="../Imagens/menina2.png" alt="foto de perfil de Vick">
+          <div class="info">
+            <h3>Vick</h3>
+            <p>Ontem</p>
+          </div>
+        </li>
+
+        <li class="contato" data-username="Miliondollarman">
+          <img src="../Imagens/menino2.png" alt="foto de perfil de Miliondollarman">
+          <div class="info">
+            <h3>Miliondollarman</h3>
+            <p>Offline</p>
+          </div>
+        </li>
+
+        <li class="contato" data-username="Leo">
+          <img src="../Imagens/menino3.png" alt="foto de perfil de Leo">
+          <div class="info">
+            <h3>Leo</h3>
+            <p>Offline</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ÁREA DO CHAT -->
+    <section id="chat" aria-label="chat">
+
+      <!-- Cabeçalho do chat -->
+      <header class="chat-header">
+        <img id="chat-header-img" src="" alt="perfil">
+        <h2 id="chat-header-nome"></h2>
+      </header>
+
+      <!-- Área onde aparecem as mensagens -->
+      <div class="mensagens" id="mensagens-lista"></div>
+
+      <!-- Caixa de digitação -->
+      <div class="caixa-digitacao">
+        <input type="text" id="input-mensagem" placeholder="mensagens..." autocomplete="off">
+        <button id="bn-enviar">Enviar</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Script JS -->
+  <script src="chat.js"></script>
+
+</body>
+
+</html>
