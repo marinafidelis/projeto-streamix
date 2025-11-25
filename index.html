@@ -1,121 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streamix</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../login\login.css" />
+    <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Streamix - Login</title>
 </head>
+
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="logo">Streamix</h1>
-                <nav class="header-nav">
-                    <button class="btn-icon" aria-label="Adicionar">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                            <line x1="12" y1="7" x2="12" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <button class="btn-icon" aria-label="Menu">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <div id="mensagemBoasVindas" class="mensagem"></div>
+    <div id="mensagemErro" class="mensagem erro"></div>
 
-    
-    <main class="main">
-        <div class="container">
-            
-            <section class="profile">
-                <div class="profile-header">
-                    <div class="profile-avatar">
-                        <img src="./Avatar.png" alt="Foto do usuario" class="avatar">
+    <div id="page">
+
+        <div id="left">
+
+            <header>
+                <!-- logo modo claro -->
+                <img  class="logo logo-light"  src="../Imagens\logo(modo claro).png" alt="logo streamix (modo claro)" />
+
+                <!-- logo modo escuro-->
+                <img class="logo logo-dark" src="../Imagens\logo(modo escuro).png" alt="logo streamix (modo escuro)">
+
+                <!-- Botão modo escuro -->
+                <div class="trilho" id="trilho" tabindex="0" aria-label="Alternar modo escuro">
+                    <div class="indicador"></div>
+                </div>
+            </header>
+
+            <main>
+                <section class="headline">
+                    <h1>Acesse a plataforma</h1>
+                </section>
+
+                <form id="loginForm">
+
+                    <div class="input-wrapper">
+                        <label for="identificador">E-mail, Usuário ou Celular</label>
+                        <input id="identificador" type="text" required
+                            placeholder="Digite seu e-mail, usuário ou celular" />
+                        <span class="error"></span>
                     </div>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-value" id="posts-count">0</span>
-                            <span class="stat-label">Posts</span>
+
+                    <div class="input-wrapper">
+                        <div class="label-wrapper">
+                            <label for="senha">Senha</label>
+                            <a href="../esqueci-alterar\index.html?modo=recuperar">Esqueceu a senha?</a>
                         </div>
-                        <div class="stat">
-                            <span class="stat-value" id="followers-count">0</span>
-                            <span class="stat-label">Seguidores</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value" id="following-count">0</span>
-                            <span class="stat-label">Seguindo</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value" id="reposts-count">0</span>
-                            <span class="stat-label">Republicados</span>
-                        </div>
+
+                        <input type="password" id="senha" placeholder="Digite sua senha" />
+                        <img onclick="togglePassword()" class="eye hide" src="../Imagens\olho-aberto.svg"
+                            alt="olho aberto" />
+                        <img onclick="togglePassword()" class="eye" src="../Imagens\olho-fechado.svg" alt="olho fechado" />
+                        <span class="error"></span>
                     </div>
-                </div>
-                <div class="profile-info">
-                    <h2 class="profile-name">Usuario</h2>
-                    <p class="profile-bio">🎵 Músico</p>
-                    <p class="profile-bio">📍 Pernambuco</p>
-                    <p class="profile-bio">Criando experiências digitais incríveis</p>
-                </div>
-            </section>
 
-            
-            <div class="tabs">
-                <button class="tab active" data-tab="publicacoes">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    <span>POSTS</span>
-                </button>
-                <button class="tab" data-tab="republicados">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M3 11V9C3 6 5 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M21 13V15C21 18 19 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span>REPUBLICADOS</span>
-                </button>
-            </div>
+                    <button type="submit" id="entrarButton">Entrar</button>
 
-            
-            <section class="content active" id="publicacoes">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Carregando publicações...</p>
-                </div>
-                <div class="grid" id="grid-publicacoes"></div>
-            </section>
+                    <div class="create-account">
+                        Ainda não tem conta?
+                        <a href="../cadastro\cadastro.html">Inscreva-se</a>
+                    </div>
 
-            <section class="content" id="republicados">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Carregando republicados...</p>
-                </div>
-                <div class="grid" id="grid-republicados"></div>
-            </section>
+                </form>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+            </footer>
+
         </div>
-    </main>
 
-    
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+        <div id="right">
+            <img src="../Imagens\edited_image.png" alt="Imagem decorativa da plataforma" />
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+    </div>
+
+    <script src="../storage.js"></script>
+    <script src="../login\login.js"></script>
 </body>
+
 </html>
