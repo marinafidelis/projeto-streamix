@@ -16,7 +16,7 @@
 
 <body id="body">
 
-    <header>
+    <header >
         <div class="container-header">
 
             <button class="menu-toggle" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
@@ -26,7 +26,7 @@
             </div>
 
             <form class="pesquisa-header" role="search" aria-label="Pesquisar">
-                <input type="text" id="busca-header" name="busca" placeholder="Buscar" />
+                <input type="text" id="busca-header" name="busca" placeholder='Digite "Melhor Vingador"'/>
                 <button type="submit" aria-label="Buscar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -43,7 +43,7 @@
     </header>
 
     <!--- Menu Lateral --->
-   
+
     <aside class="menu-lateral">
 
         <section class="menu-principal">
@@ -51,6 +51,12 @@
             <h3 class="principal"><strong>Principal</strong></h3>
 
             <ul>
+                <li>
+                    <button class="btn-aba btn-home" aria-label="Home" type="button">
+                        <i class="fa-solid fa-house"></i>Home
+                    </button>
+                </li>
+
                 <li><button class="btn-aba" data-aba="videos"><i class="fab fa-youtube"></i>Vídeos</button></li>
                 <li><button class="btn-aba" data-aba="posts"><i class="fa-regular fa-pen-to-square"></i>Posts</button>
                 </li>
@@ -72,17 +78,17 @@
                         <i class="fa-regular fa-bookmark"></i> Salvos
                     </button>
                 </li>
-
-                <button id="btn-minhas-curtidas"><i class="fa-regular fa-heart"></i> Minhas Curtidas</button>
+                <li>
+                    <button id="btn-minhas-curtidas"><i class="fa-regular fa-heart"></i> Minhas Curtidas</button>
                 </li>
 
             </ul>
         </section>
 
-        <!-- ===== MODAL MINHAS CURTIDAS ===== -->
+        <!-- MODAL MINHAS CURTIDAS -->
         <div id="modal-curtidas" class="modal-overlay escondido">
             <div class="modal-conteudo">
-                <header class="modal-header">
+                <header class="modal-headercurtidas">
                     <h2>Minhas Curtidas</h2>
                     <button id="fechar-modal-curtidas" class="fechar-modal" aria-label="Fechar modal">
                         <i class="fa-solid fa-xmark"></i>
@@ -108,8 +114,9 @@
         </section>
 
         <section class="criar">
-            <li><button>Postar</button></li>
+            <li><button id="btn-postar-menu">Postar</button></li>
         </section>
+
 
     </aside>
 
@@ -119,13 +126,6 @@
 
         <!--Aba de vídeos-->
         <section id="feed-videos" class="aba ativa">
-
-            <!--Formulário de pesquisa-->
-            <form class="pesquisa" role="search" aria-label="Pesquisar no feed">
-                <label for="busca" class="buscar-feed"></label>
-                <input type="text" id="busca" name="busca" placeholder="Buscar" />
-                <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
 
         </section>
 
@@ -157,13 +157,25 @@
 
                 </div>
 
-                <!--Coluna direita: preenche espaço vazio no desktop-->
+                <!--Coluna direita preenche espaço vazio no desktop-->
                 <div class="coluna-direita">
-                    <h3>Sugestões</h3>
-                    <p> Em desenvolvimento
+                    <h3> Bem-vindo ao Streamix</h3>
+                    <p>
+                        Aqui você acompanha vídeos, descobre novos canais e compartilha suas ideias em posts de texto.
+                        Role o feed, curta, comente e explore o que está em alta.
+                        <br>
+                        <br>
+                    <h3>🔥 Em alta na Streamix</h3>
+                    <ul class="lista-trending">
+                        <li>#DeuTrabalho</li>
+                        <li>#BugDoNada</li>
+                        <li>#FuncionouNemSeiComo</li>
+                        <li>#FoiNaBaseDodesespero</li>
+                        <li>#SeRodarJáVale10</li>
+                        <li>#NotaPorCaridadeNatalinaPFVR</li>
+                    </ul>
                     </p>
                 </div>
-
             </div>
 
         </section>
@@ -173,17 +185,17 @@
     <!-----Modal de Comentários ----->
     <div id="modal-comentarios" class="modal-overlay escondido">
         <div class="modal-conteudo">
-            <header class="modal-header">
+            <header class="modal-headercomentario">
                 <h2>Comentários</h2>
                 <button id="fechar-modal-comentarios" class="fechar-modal" aria-label="Fechar modal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </header>
 
-        
+            <!-- O post aparecerá aqui -->
             <div id="post-original-modal" class="post-original"></div>
 
-      
+            <!-- A lista de comentários aparecerá aqui -->
             <div id="lista-comentarios-modal" class="modal-corpo"></div>
 
             <!-- Formulário para adicionar um novo comentário -->
@@ -197,26 +209,24 @@
         </div>
     </div>
 
-   
-<div id="modal-salvos" class="modal-overlay escondido">
-  <div class="modal-conteudo">
-    <header class="modal-header">
-      <h2>Salvos</h2>
-      <button id="fechar-modal-salvos" class="fechar-modal" aria-label="Fechar modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </header>
-    <div id="lista-salvos-modal" class="modal-corpo">
-      <!-- Os posts salvos falsos vão aparecer aqui via JS -->
+    <!------- Modal Salvos ------>
+    <div id="modal-salvos" class="modal-overlay escondido">
+        <div class="modal-conteudo">
+            <header class="modal-headersalvos">
+                <h2>Salvos</h2>
+                <button id="fechar-modal-salvos" class="fechar-modal" aria-label="Fechar modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+            <div id="lista-salvos-modal" class="modal-corpo">
+                <!-- Os posts salvos falsos vão aparecer aqui via JS -->
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-
 
     <footer class="rodape">
         <nav class="navegacao-rodape">
-            <button id="btn-home" class="btn-aba-footer" aria-label="Home">
+            <button class="btn-aba-footer btn-home" aria-label="Home">
                 <i class="fa-solid fa-house"></i>
             </button>
 
@@ -235,7 +245,9 @@
             </button>
         </nav>
     </footer>
+    
 
+    <script src="/Dark mode/script.js"></script>
     <script src="/Feed/script.js"></script>
 
 </body>
