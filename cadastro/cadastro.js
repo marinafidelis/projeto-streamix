@@ -288,7 +288,7 @@ function togglePassword() {
   
       setTimeout(() => {
         sucesso.style.display = "none";
-        window.location.href = "../login/login.html"; // redireciona pro login
+        window.location.href = "../index.html"; // redireciona pro login
       }, 2500);
     } else {
       const erro = document.getElementById("mensagemErro");
