@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-section">
+                <h1>Usuário</h1>
+                <div class="actions">
+                    <button type="button" class="clean-button" title="Adicionar" aria-label="Adicionar publicação">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="black" stroke-width="1.8"/>
+                            <line x1="12.1" y1="6.9" x2="12.1" y2="17.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                            <line x1="6.9" y1="11.8" x2="17.1" y2="11.8" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="clean-button" title="Menu" aria-label="Abrir menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="2" y1="5.1" x2="22" y2="5.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                            <line x1="2" y1="12.1" x2="22" y2="12.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                            <line x1="2" y1="19.1" x2="22" y2="19.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="userinfo">
+            <div class="avatarinfo">
+                <div class="photo">
+                    <img src="/imagens/usuario.png" alt="Foto de perfil do usuario" />
+                </div>
+                <div class="states">
+                    <div class="state">
+                        <p id="posts-count">0</p>
+                        <p>Publicações</p>
+                    </div>
+                    <div class="state">
+                        <p id="followers-count">25k</p>
+                        <p>Seguidores</p>
+                    </div> 
+                    <div class="state">
+                        <p id="following-count">300</p>
+                        <p>Seguindo</p>
+                    </div>
+                    <div class="state">
+                        <p id="reposts-count">0</p>
+                        <p>Republicados</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bio">
+                <h2>Usuário</h2>
+                <p>Músico</p>
+                <p>Pernambuco</p>
+                <p>Criando experiências digitais incríveis</p>
+            </div>
+        </section>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="publicacoes">PUBLICAÇÕES</button>
+            <button class="tab" data-tab="republicados">REPUBLICADOS</button>
+        </div>
+
+        <section class="content-section active" id="publicacoes">
+            <div class="loading">Carregando publicações</div>
+            <div class="galeria" id="galeria-publicacoes"></div>
+        </section>
+
+        <section class="content-section" id="republicados">
+            <div class="loading">Carregando republicados</div>
+            <div class="galeria" id="galeria-republicados"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+   
