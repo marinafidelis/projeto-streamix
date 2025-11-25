@@ -5,88 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../login\login.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="header-section">
-                <h1>Usuário</h1>
-                <div class="actions">
-                    <button type="button" class="clean-button" title="Adicionar" aria-label="Adicionar publicação">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="black" stroke-width="1.8"/>
-                            <line x1="12.1" y1="6.9" x2="12.1" y2="17.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
-                            <line x1="6.9" y1="11.8" x2="17.1" y2="11.8" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Streamix</h1>
+                <nav class="header-nav">
+                    <button class="btn-icon" aria-label="Adicionar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="7" x2="12" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <button type="button" class="clean-button" title="Menu" aria-label="Abrir menu">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="2" y1="5.1" x2="22" y2="5.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
-                            <line x1="2" y1="12.1" x2="22" y2="12.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
-                            <line x1="2" y1="19.1" x2="22" y2="19.1" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+                    <button class="btn-icon" aria-label="Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </button>
-                </div>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="userinfo">
-            <div class="avatarinfo">
-                <div class="photo">
-                    <img src="/imagens/usuario.png" alt="Foto de perfil do usuario" />
-                </div>
-                <div class="states">
-                    <div class="state">
-                        <p id="posts-count">0</p>
-                        <p>Publicações</p>
-                    </div>
-                    <div class="state">
-                        <p id="followers-count">25k</p>
-                        <p>Seguidores</p>
-                    </div> 
-                    <div class="state">
-                        <p id="following-count">300</p>
-                        <p>Seguindo</p>
-                    </div>
-                    <div class="state">
-                        <p id="reposts-count">0</p>
-                        <p>Republicados</p>
-                    </div>
-                </div>
-            </div>
+    
+    <main class="main">
+        <div class="container">
             
-            <div class="bio">
-                <h2>Usuário</h2>
-                <p>Músico</p>
-                <p>Pernambuco</p>
-                <p>Criando experiências digitais incríveis</p>
+            <section class="profile">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="/usuario.png" alt="Foto do usuario" class="avatar">
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="posts-count">0</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="followers-count">0</span>
+                            <span class="stat-label">Seguidores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="following-count">0</span>
+                            <span class="stat-label">Seguindo</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="reposts-count">0</span>
+                            <span class="stat-label">Republicados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">Usuario</h2>
+                    <p class="profile-bio">🎵 Músico</p>
+                    <p class="profile-bio">📍 Pernambuco</p>
+                    <p class="profile-bio">Criando experiências digitais incríveis</p>
+                </div>
+            </section>
+
+            
+            <div class="tabs">
+                <button class="tab active" data-tab="publicacoes">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>POSTS</span>
+                </button>
+                <button class="tab" data-tab="republicados">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 11V9C3 6 5 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M21 13V15C21 18 19 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>REPUBLICADOS</span>
+                </button>
             </div>
-        </section>
 
-        <div class="tabs">
-            <button class="tab active" data-tab="publicacoes">PUBLICAÇÕES</button>
-            <button class="tab" data-tab="republicados">REPUBLICADOS</button>
+            
+            <section class="content active" id="publicacoes">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Carregando publicações...</p>
+                </div>
+                <div class="grid" id="grid-publicacoes"></div>
+            </section>
+
+            <section class="content" id="republicados">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Carregando republicados...</p>
+                </div>
+                <div class="grid" id="grid-republicados"></div>
+            </section>
         </div>
-
-        <section class="content-section active" id="publicacoes">
-            <div class="loading">Carregando publicações</div>
-            <div class="galeria" id="galeria-publicacoes"></div>
-        </section>
-
-        <section class="content-section" id="republicados">
-            <div class="loading">Carregando republicados</div>
-            <div class="galeria" id="galeria-republicados"></div>
-        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-   
