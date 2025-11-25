@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f3f2ff;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Botão de voltar (do chat) */
+#btn-voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: none;
+}
+
+#btn-voltar:hover {
+  opacity: .7;
+}
+
+/* Botão de voltar para o feed */
+#btn-voltar-feed {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#btn-voltar-feed:hover {
+  opacity: .7;
+}
+
+/* Layout principal */
+#mensagens {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Lista de conversas */
+#lista-de-conversas {
+  background: #ffffff;
+  border-right: 1px solid #d4d2ff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  overflow-y: auto;
+}
+
+/* Cabeçalho da lista */
+.conversas-header {
+  
+  height: 72px;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d4d2ff;
+  position: relative;
+}
+
+.conversas-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+
+}
+
+/* Barra de pesquisa */
+.barra-pesquisa {
+  padding: 15px;
+}
+
+.barra-pesquisa input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #d4d2ff;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+/* Lista de contatos */
+#lista-contatos {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.contato {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  cursor: pointer;
+  transition: .2s;
+  border-radius: 12px;
+  margin: 5px 10px;
+}
+
+.contato:hover {
+  background: #f3f4f6;
+}
+
+.contato.ativo {
+  background: #ebeaff;
+  border-left: 4px solid #6c63ff;
+}
+
+.contato img {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+}
+
+/* Chat */
+#chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Cabeçalho do chat */
+.chat-header {
+  height: 72px;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  gap: 14px;
+  border-bottom: 1px solid #d4d2ff;
+}
+
+.chat-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+}
+
+#chat-header-nome {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Mensagens */
+#chat .mensagens {
+  flex: 1;
+  padding: 5px 25px 25px 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Bolhas */
+.mensagem-enviada {
+  align-self: flex-end;
+  background: #6c63ff;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+.mensagem-recebida {
+  align-self: flex-start;
+  background: #fff;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+/* Caixa de digitação */
+.caixa-digitacao {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  background: white;
+  border-top: 1px solid #d4d2ff;
+}
+
+.caixa-digitacao input {
+  flex: 1;
+  padding: 12px 18px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d4d2ff;
+  box-shadow: 1px 1px 6px #0000001a;
+}
+
+.caixa-digitacao button {
+  margin-left: 12px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.caixa-digitacao button:hover {
+  background: #5a54e6;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+
+  #mensagens {
+    grid-template-columns: 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #lista-de-conversas {
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  #chat {
+    display: none;
+    height: 100vh;
+  }
+
+  body.chat-aberto #lista-de-conversas {
+    display: none;
+  }
+
+  body.chat-aberto #chat {
+    display: flex;
+  }
+
+  #btn-voltar {
+    display: none;
+  }
+
+  body.chat-aberto #btn-voltar {
+    display: block;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 50;
+  }
+
+  .chat-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background: #fff;
+    border-bottom: 1px solid #d4d2ff;
+    z-index: 40;
+  }
+
+  .chat-header img {
+    display: none;
+  }
+
+  #chat-header-nome {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+  }
+
+  #chat .mensagens {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .caixa-digitacao {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 18px;
+    border-top: 1px solid #d4d2ff;
+    background: #fff;
+    z-index: 40;
+  }
+
+  .conversas-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 40;
+    border-bottom: 1px solid #d4d2ff;
+  }
+
+  #lista-de-conversas {
+    padding-top: 100px;
+  }
+}
