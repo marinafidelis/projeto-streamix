@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="../Imagens/logotipo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Tela de perfil/style.css">
 </head>
+
 <body>
-    
+
     <header class="header">
         <div class="container">
             <div class="header-content">
+                <a href="../Feed/index.html" class="btn-volta" title="Voltar ao Feed">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
                 <h1 class="logo">Streamix</h1>
+
+
                 <nav class="header-nav">
                     <button class="btn-icon" aria-label="Adicionar">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                            <line x1="12" y1="7" x2="12" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+                            <line x1="12" y1="7" x2="12" y2="17" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
                         </svg>
                     </button>
                     <button class="btn-icon" aria-label="Menu">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
                         </svg>
                     </button>
                 </nav>
@@ -32,14 +48,14 @@
         </div>
     </header>
 
-    
+
     <main class="main">
         <div class="container">
-            
+
             <section class="profile">
                 <div class="profile-header">
                     <div class="profile-avatar">
-                        <img src="./Avatar.png" alt="Foto do usuario" class="avatar">
+                        <img src="../Imagens/usuario.png" alt="Foto do usuario" class="avatar">
                     </div>
                     <div class="profile-stats">
                         <div class="stat">
@@ -61,36 +77,38 @@
                     </div>
                 </div>
                 <div class="profile-info">
-                    <h2 class="profile-name">Usuario</h2>
-                    <p class="profile-bio">🎵 Músico</p>
-                    <p class="profile-bio">📍 Pernambuco</p>
-                    <p class="profile-bio">Criando experiências digitais incríveis</p>
+                    <h2 class="profile-name">Davilla Victoria</h2>
+                    <p class="profile-bio"><i class="fa-solid fa-music"></i> Musicista</p>
+                    <p class="profile-bio"><i class="fa-solid fa-map-marker"></i> Pernambuco</p>
+                    <p class="profile-bio"><i class="fa-solid fa-laptop-code"></i> Criando experiências digitais</p>
                 </div>
             </section>
 
-            
+
             <div class="tabs">
                 <button class="tab active" data-tab="publicacoes">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" />
+                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" />
+                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" />
+                        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" />
                     </svg>
                     <span>POSTS</span>
                 </button>
                 <button class="tab" data-tab="republicados">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M3 11V9C3 6 5 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M21 13V15C21 18 19 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M3 11V9C3 6 5 5 7 5H21" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M21 13V15C21 18 19 19 17 19H3" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
                     </svg>
                     <span>REPUBLICADOS</span>
                 </button>
             </div>
 
-            
+
             <section class="content active" id="publicacoes">
                 <div class="loading">
                     <div class="spinner"></div>
@@ -109,7 +127,7 @@
         </div>
     </main>
 
-    
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Streamix. Todos os direitos reservados.</p>
@@ -118,4 +136,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
