@@ -235,7 +235,7 @@ formSenha.addEventListener("submit", async (e) => {
   msgSenha.className = "mensagem sucesso";
 
   setTimeout(() => {
-    window.location.href = "../Feed/index.html";
+    window.location.href = "../index.html";
   }, 2000);
 });
 
