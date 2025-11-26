@@ -24,21 +24,21 @@ const API = {
             {
                 id: 1,
                 type: 'text',
-                caption: 'Novo projeto musical chegando! 🎵✨',
+                caption: 'Minha arte hoje: abrir o app, rolar o feed e fingir que isso conta como produtividade.',
                 likes: 450,
                 comments: 28
             },
             {
                 id: 2,
                 type: 'text',
-                caption: 'Nos bastidores do show de ontem 🎸🔥',
+                caption: 'A vida é feita de escolhas: agora mesmo ignorei 7 problemas pra ver mais um vídeo.',
                 likes: 892,
                 comments: 64
             },
             {
                 id: 3,
                 type: 'text',
-                caption: 'Ensaio de hoje foi incrível! ❤️🎶',
+                caption: 'Quem precisa de terapia quando tem fone de ouvido e um vídeo aleatório bom?',
                 likes: 621,
                 comments: 41
             }
@@ -52,7 +52,7 @@ const API = {
             {
                 id: 1,
                 type: 'text',
-                caption: 'A musica tem o poder de transformar✨',
+                caption: 'Hoje a meta é: nenhuma meta.',
                 likes: 1200,
                 comments: 750,
                 
@@ -61,7 +61,7 @@ const API = {
             {
                 id: 2,
                 type: 'text',
-                caption: 'Cada acorde conta uma historia❤️🎶',
+                caption: 'Não sou antissocial, só social com pouca gente.',
                 likes: 700,
                 comments: 258,           
                 
@@ -94,7 +94,7 @@ const createPostCard = (post, isRepost = false) => {
 
     let content = '';
 
-   
+    
     if (isRepost) {
         content += `
             <div class="repost-badge">
