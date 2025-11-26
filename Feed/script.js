@@ -212,7 +212,7 @@ const postsFixos = [
   {
     id: 1001,
     usuario: '@bugexistencial',
-    avatar: '/imagens/menino1.png',
+    avatar: '../Imagens/menino1.png',
     texto: 'Às vezes acho que o verdadeiro bug sou eu e o JavaScript tá só reagindo.',
     curtidas: 10,
     comentarios: 3,
@@ -222,7 +222,7 @@ const postsFixos = [
   {
     id: 1002,
     usuario: '@naosoueu',
-    avatar: '/imagens/menino2.png',
+    avatar: '../Imagens/menino2.png',
     texto: 'infelizmente não dá pra gente ganhar todas mas perder todas aparentemente da sim.',
     curtidas: 30,
     comentarios: 8,
@@ -232,7 +232,7 @@ const postsFixos = [
   {
     id: 1003,
     usuario: '@IsaNaoBela',
-    avatar: '/imagens/menina2.png',
+    avatar: '../Imagens/menina2.png',
     texto: 'oi bb queria saber se você gosta de cocaína, porque hj eu tô só o pó',
     curtidas: 15,
     comentarios: 13,
@@ -252,7 +252,7 @@ const postsFixos = [
   {
     id: 1005,
     usuario: '@Vick',
-    avatar: '/imagens/menina2.png',
+    avatar: '../Imagens/menina1.png',
     texto: 'como pode o vagalume existir? um animal com a bundinha de led ksksk.',
     curtidas: 100,
     comentarios: 18,
@@ -262,7 +262,7 @@ const postsFixos = [
   {
     id: 1006,
     usuario: '@milliondollarman',
-    avatar: '/imagens/menino2.png',
+    avatar: '../Imagens/menino2.png',
     texto: 'e a oficina do diabo na minha mente vazia que já virou uma multinacional.',
     curtidas: 67,
     comentarios: 10,
@@ -272,7 +272,7 @@ const postsFixos = [
   {
     id: 1007,
     usuario: '@httpsmari',
-    avatar: '/imagens/menina1.png',
+    avatar: '../Imagens/menina1.png',
     texto: 'Fazendo o projeto na base de 2lt de energetico  e "Baby" do Justin.',
     curtidas: 10,
     comentarios: 3,
@@ -282,7 +282,7 @@ const postsFixos = [
   {
     id: 1008,
     usuario: '@maipuper',
-    avatar: '/imagens/menina2.png',
+    avatar: '../Imagens/menina2.png',
     texto: 'sinceramente eu não julgo o galo por começar o dia gritando.',
     curtidas: 70,
     comentarios: 10,
@@ -292,7 +292,7 @@ const postsFixos = [
   {
     id: 1009,
     usuario: '@leoleoleo',
-    avatar: '/imagens/menino3.png',
+    avatar: '../Imagens/menino3.png',
     texto: 'Aquela frase iconica da Inês Brasil "a saida é logo ali monamu".',
     curtidas: 8,
     comentarios: 2,
@@ -302,7 +302,7 @@ const postsFixos = [
   {
     id: 1010,
     usuario: '@quemario',
-    avatar: '/imagens/menino1.png',
+    avatar: '../Imagens/menino1.png',
     texto: 'piririn, piririn, piririn someone has called me, who is? its me, fireball and the heat is killing',
     curtidas: 90,
     comentarios: 8,
@@ -337,7 +337,7 @@ if (formPost && textoPost) {
     const novoPost = {
       id: Date.now(), // id único baseado na hora atual
       usuario: '@davilla',
-      avatar: '/imagens/usuario.png',
+      avatar: '../Imagens/usuario.png',
       texto: texto,
       curtidas: 0,
       comentarios: 0,
