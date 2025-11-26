@@ -210,7 +210,7 @@ formSenha.addEventListener("submit", async (e) => {
     msgSenha.className = "mensagem sucesso";
 
     setTimeout(() => {
-      window.location.href = "..Feed/index.html";
+      window.location.href = "Feed/index.html";
     }, 1500);
 
     return;
