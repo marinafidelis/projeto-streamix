@@ -356,6 +356,7 @@ main.feed {
   font-weight: bold;
 }
 
+
 /*FORMULÁRIO DE POSTAGEM*/
 
 .formulario-post {
@@ -411,6 +412,7 @@ textarea#texto-post {
   cursor: pointer;
   border: none;
   transition: background 0.3s ease, transform 0.2s ease;
+    user-select: none;
 }
 
 .post-footer button:hover {
@@ -1198,11 +1200,11 @@ body.modo-escuro .rodape {
 }
 
 body.modo-escuro .rodape button {
-  color: #e0e0e0;
+  color: #c0b5b5;
 }
 
 body.modo-escuro .rodape button:hover {
-  color: #a855f7;
+  color: #342c3b;
 }
 
 body.modo-escuro .modal-overlay {
