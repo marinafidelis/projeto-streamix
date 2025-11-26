@@ -1115,3 +1115,14 @@ botoesHome.forEach(botao => {
   });
 });
 
+//------------ REDIRECIONAMENTO BOTÃO MENSAGENS -----------
+
+//pega o botão de mensagens
+const btnMensagensFooter = document.getElementById("btn-mensagens-footer");
+
+if (btnMensagensFooter) {
+  btnMensagensFooter.addEventListener("click", () => {
+    window.location.href = "../chat/chat.html";
+  }); //quando clicado redireciona o usuário para a pagina de mensagens
+}
+
