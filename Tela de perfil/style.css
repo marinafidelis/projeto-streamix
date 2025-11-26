@@ -47,13 +47,18 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 60px;
+     gap: 16px;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(to bottom, #4c00fc, #4b0082);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .header-nav {
@@ -78,6 +83,23 @@ body {
     background-color: var(--hover-bg);
     transform: scale(1.05);
 }
+
+.btn-volta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    font-size: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.btn-volta:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
 
 
 .main {
@@ -111,6 +133,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--border-color);
+    border-color: #2f1241;
 }
 
 .profile-stats {
@@ -438,6 +461,7 @@ body {
     font-size: 13px;
     color: var(--secondary-color);
 }
+
 
 
 @media (max-width: 768px) {
