@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../login\login.css" />
-    <link rel="icon" href="/imagens/logotipo.png" type="image/png">
+
+    <link rel="stylesheet" href="login/login.css" />
+    <link rel="icon" href="Imagens/logotipo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
     <title>Streamix - Login</title>
 </head>
 
@@ -22,10 +24,12 @@
 
             <header>
                 <!-- logo modo claro -->
-                <img  class="logo logo-light"  src="../Imagens\logo(modo claro).png" alt="logo streamix (modo claro)" />
+                <img class="logo logo-light" src="Imagens/logo(modo claro).png"
+                    alt="logo streamix (modo claro)" />
 
-                <!-- logo modo escuro-->
-                <img class="logo logo-dark" src="../Imagens\logo(modo escuro).png" alt="logo streamix (modo escuro)">
+                <!-- logo modo escuro -->
+                <img class="logo logo-dark" src="Imagens/logo(modo escuro).png"
+                    alt="logo streamix (modo escuro)">
 
                 <!-- Botão modo escuro -->
                 <div class="trilho" id="trilho" tabindex="0" aria-label="Alternar modo escuro">
@@ -50,13 +54,17 @@
                     <div class="input-wrapper">
                         <div class="label-wrapper">
                             <label for="senha">Senha</label>
-                            <a href="../esqueci-alterar/index.html?modo=recuperar">Esqueceu a senha?</a>
+
+                            <a href="esqueci-alterar/index.html?modo=recuperar">Esqueceu a senha?</a>
                         </div>
 
                         <input type="password" id="senha" placeholder="Digite sua senha" />
-                        <img onclick="togglePassword()" class="eye hide" src="../Imagens\olho-aberto.svg"
+
+                        <img onclick="togglePassword()" class="eye hide" src="Imagens/olho-aberto.svg"
                             alt="olho aberto" />
-                        <img onclick="togglePassword()" class="eye" src="../Imagens\olho-fechado.svg" alt="olho fechado" />
+                        <img onclick="togglePassword()" class="eye" src="Imagens/olho-fechado.svg"
+                            alt="olho fechado" />
+
                         <span class="error"></span>
                     </div>
 
@@ -64,7 +72,8 @@
 
                     <div class="create-account">
                         Ainda não tem conta?
-                        <a href="../cadastro\cadastro.html">Inscreva-se</a>
+
+                        <a href="cadastro/cadastro.html">Inscreva-se</a>
                     </div>
 
                 </form>
@@ -77,13 +86,13 @@
         </div>
 
         <div id="right">
-            <img src="../Imagens\edited_image.png" alt="Imagem decorativa da plataforma" />
+            <img src="Imagens/edited_image.png" alt="Imagem decorativa da plataforma" />
         </div>
 
     </div>
 
-    <script src="../storage.js"></script>
-    <script src="../login\login.js"></script>
+    <script src="storage.js"></script>
+    <script src="login/login.js"></script>
 </body>
 
 </html>
