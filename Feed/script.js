@@ -242,7 +242,7 @@ const postsFixos = [
   {
     id: 1004,
     usuario: '@jujuba',
-    avatar: '/imagens/menina1.png',
+    avatar: '../Imagens/menina1.png',
     texto: 'Em breve o lançamento da minha nova personalidade para 2026.',
     curtidas: 60,
     comentarios: 8,
@@ -405,7 +405,7 @@ function mostrarPosts(postsArray) {
     // Monta o conteúdo do post
     article.innerHTML = `
       <header class="post-header">
-        <img src="${post.avatar || '/imagens/usuario.jpg'}" alt="Foto do usuário" class="foto-usuario">
+        <img src="${post.avatar || '../Imagens/usuario.jpg'}" alt="Foto do usuário" class="foto-usuario">
         <div>
           <h2 class="nome-usuario">${post.usuario || 'Usuário Anônimo'}</h2>
           <span class="tempo">${post.criadoEm || ''}</span>
@@ -649,7 +649,7 @@ function abrirModalCurtidas() {
 
       article.innerHTML = `
         <header class="post-headercurtida">
-          <img src="${post.avatar || '/imagens/usuario.jpg'}" alt="Foto do usuário" class="foto-usuario">
+          <img src="${post.avatar || '../Imagens/usuario.jpg'}" alt="Foto do usuário" class="foto-usuario">
           <div>
             <h2 class="nome-usuario">${post.usuario || 'Usuário Anônimo'}</h2>
             <span class="tempo">${post.criadoEm || ''}</span>
@@ -704,17 +704,17 @@ if (modalCurtidas) {
 // Objeto que guarda comentários falsos por ID de post
 const comentariosFalsos = {
   '1001': [
-    { usuario: '@naosoueu', avatar: '/imagens/menino2.png', texto: 'KAKAKAKAKAKA forças' },
+    { usuario: '@naosoueu', avatar: '../Imagens/menino2.png', texto: 'KAKAKAKAKAKA forças' },
   ],
   '1003': [
-    { usuario: '@milliondollarman', avatar: '/imagens/menino2.png', texto: 'Essa foi boa kkkkkk' },
-    { usuario: '@maipuper', avatar: '/imagens/menina2.png', texto: 'LANÇOUUU' },
+    { usuario: '@milliondollarman', avatar: '../Imagens/menino2.png', texto: 'Essa foi boa kkkkkk' },
+    { usuario: '@maipuper', avatar: '../Imagens/menina2.png', texto: 'LANÇOUUU' },
   ],
   '1007': [
-    { usuario: '@Vick', avatar: '/imagens/menina2.png', texto: 'Pra mim baby sempre será a mais mais do Justin' },
+    { usuario: '@Vick', avatar: '../Imagens/menina2.png', texto: 'Pra mim baby sempre será a mais mais do Justin' },
   ],
   '1010': [
-    { usuario: '@leoleoleo', avatar: '/imagens/menino3.png', texto: 'GENIAL AKAKAKAKAK' }
+    { usuario: '@leoleoleo', avatar: '../Imagens/menino3.png', texto: 'GENIAL AKAKAKAKAK' }
   ],
 
 };
@@ -850,14 +850,14 @@ const salvosFakes = [
   {
     id: 1,
     usuario: '@quemario',
-    avatar: '/imagens/menino2.png',
+    avatar: '../Imagens/menino2.png',
     texto: 'Meta de vida: ter a estabilidade emocional do localStorage (nunca esquece nada).',
     criadoEm: 'há 1h'
   },
   {
     id: 2,
     usuario: '@isaNaobela',
-    avatar: '/imagens/menina2.png',
+    avatar: '../Imagens/menina2.png',
     texto: 'CSS É UMA DESGRAÇA',
     criadoEm: 'há 3h'
   }
