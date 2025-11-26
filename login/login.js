@@ -93,7 +93,7 @@ function togglePassword() {
   
           // Redireciona para o feed após 2 segundos
           setTimeout(() => {
-            window.location.href = "/Feed/index.html";
+            window.location.href = "Feed/index.html";
           }, 2000);
   
         } else {
